@@ -1,0 +1,23 @@
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Emoji {
+  id         Int     @id @default(autoincrement())
+  emoji      String
+  label      String
+  shortcodes String
+  keywords   String
+  locale     String
+
+  @@unique([emoji, locale], name: "emoji_locale")
+}
+
+
