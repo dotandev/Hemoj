@@ -1,12 +1,12 @@
-# 📬 Leenth - A Rate Limiter Service
+# 📬 Leenth - A Emoji-To-Text Service
 
-This is a simple Rate-Limiter Implementation.
+This is an Emoji-To-Text Implementation.
 
 ---
 
 ## 🚀 Features
 
-- Serve as a rate-limiter for internal APIs
+- Serve as an Emoji-To-Text Converter.
 
 
 ---
