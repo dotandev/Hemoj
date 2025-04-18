@@ -17,7 +17,10 @@ export class EmojiController {
     const error = validateEmojiToTextInput(req.body);
     if (error) res.status(400).json({ error });
 
-    const { emoji, locale = 'en' } = req.body;
+    let { emoji, locale } = req.body;
+    if (locale === null) {
+      locale = 'en'
+    }
     const emojiEntry = await getEmojiLabel(emoji, locale);
 
     if (!emojiEntry) {
@@ -31,7 +34,11 @@ export class EmojiController {
     const error = validateTextToEmojiInput(req.body);
     if (error) res.status(400).json({ error });
 
-    const { text, locale = 'en' } = req.body;
+    let { text, locale } = req.body;
+    
+    if (locale === null) {
+      locale = 'en'
+    }
     const emojiEntry = await findEmojiFromText(text, locale);
 
     if (!emojiEntry) {
